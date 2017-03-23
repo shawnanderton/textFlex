@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link >
+    <style>
+        @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+        body {
+            font: 24px Helvetica;
+            background: #999999;
+        }
+        
+        #main {
+            min-height: 800px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-flow: row;
+        }
+        
+        #main>article {
+            margin: 0 0 4px 0;
+            padding: 5px;
+            border: 1px solid #cccc33;
+            background: #dddd88;
+            flex: 3 1 75%;
+            order: 2;
+        }
+        
+        #main>nav {
+            margin: 0 0 4px 0;
+            padding: 5px;
+            background: #dddd88;
+            border-radius: 0 0 0 7pt;
+            border: 1px solid #cccc33;
+            flex: 1 6 5%;
+            order: 1;
+        }
+        
+        #main>aside {
+            margin: 0 0 4px 0;
+            padding: 5px;
+            border: 1px solid #cccc33;
+            background: #dddd88;
+            border-radius: 0 0 7pt 0;
+            flex: 1 6 20%;
+            order: 3;
+        }
+        
+        header,
+        footer {
+            display: block;
+            padding: 5px;
+            min-height: 100px;
+            border: 1px solid #cccc33;
+            background: #dddd88;
+            border-radius: 7pt 7pt 0 0;
+        }
+        /* Too narrow to support three columns */
+        
+        @media all and (max-width: 640px) {
+            #main,
+            #page {
+                flex-direction: column;
+            }
+            #main>article,
+            #main>nav,
+            #main>aside {
+                /* Return them to document order */
+                order: 0;
+            }
+            #main>nav,
+            #main>aside,
+            header,
+            footer {
+                min-height: 50px;
+                max-height: 50px;
+            }
+        }
+
+        .ap-checkbox-input {
+            font-size: 25px;
+        }
+        
+        .ap-checkbox-layout {
+            cursor: inherit;
+            align-items: baseline;
+            vertical-align: middle;
+            display: inline-flex;
+        }
+        
+        
+        .ap-checkbox-input {
+            font-size: 22px;
+            display: inline-block;
+            height: 35px;
+            line-height: 0;
+            margin: auto;
+            margin-right: 5px;
+            order: 0;
+            position: relative;
+            vertical-align: middle;
+            white-space: nowrap;
+            width: 35px;
+            flex-shrink: 0;
+            margin: 0 15px 0 auto;
+        }
+        
+        .ap-checkbox-input {
+            bottom: 0;
+            left: 50%;
+        }
+        
+        .ap-checkbox-label {
+            cursor: pointer;
+        }
+        
+        .ap-checkbox-label-before .ap-checkbox-inner-container {
+            order: 1;
+            margin: 0 auto 0 5px;
+        }
+        
+        .ap-checkbox-layout input[type=checkbox]{
+             position: relative;
+        }
+        /* to hide the checkbox itself  */
+        
+       label input[type=checkbox]:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+        /*** custom checkboxes ***/
+        
+         label input[type=checkbox]:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+        
+        label input[type=checkbox]:checked:before {
+            content: '\f14a';
+        }
+        /* checked icon */
+        
+         label input[type=checkbox]:disabled:before {
+            color: #dddddd
+        }
+    </style>
+</head>
+
+<body>
+    <header>header</header>
+    <div id='main'>
+        <article>
+            <div class="ap-checkbox-layout ap-checkbox-label-before">
+            <input type="checkbox" class="ap-checkbox-input" />
+            <label class="ap-checkbox-label">
+                Hello
+            </label>
+        <div>
+        </article>
+        <nav>nav</nav>
+        <aside>aside</aside>
+    </div>
+    <footer>footer</footer>
+</body>
+
+</html>
